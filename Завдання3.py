@@ -10,6 +10,9 @@ def visualize_directory(path: Path, prefix: str = "") -> None:
     Args:
         path: Шлях до директорії для відображення.
         prefix: Префікс для форматування гілок дерева.
+        
+    Returns:
+        None - функція виводить результат напряму в консоль.
     """
     items = sorted(path.iterdir(), key=lambda p: (p.is_file(), p.name.lower()))
 
@@ -26,7 +29,11 @@ def visualize_directory(path: Path, prefix: str = "") -> None:
 
 
 def main() -> None:
-    """Головна функція програми."""
+    """Головна функція програми.
+    
+    Returns:
+        None - функція завершує роботу через sys.exit()
+    """
     init(autoreset=True)
 
     if len(sys.argv) != 2:
